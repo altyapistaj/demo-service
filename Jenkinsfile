@@ -3,6 +3,11 @@ pipeline {
         label 'jenkins-agent'
     }
 
+    parameters {
+        string(name: 'LIBRARY_JOB_NAME', defaultValue: 'demo-library-pipeline', description: 'job name to trigger')
+        string(name: 'SSH_CREDENTIAL_ID', defaultValue: 'gitlab-ssh-key', description: 'credential name')
+    }
+
     environment {
         SERVICE_REPO='https://gitlab.com/altyapistaj-group/demoservice.git'
         BRANCH_NAME='library-dependency'
@@ -11,7 +16,7 @@ pipeline {
     stages {
         stage('Checkout demo-service') {
             steps {
-                sshagent(credentials: ['gitlab-ssh-key']){
+                sshagent(credentials: ["${params.SSH_CREDENTIAL_ID}"]){
                 echo 'Cloning demo-service repository'
                 sh 'rm -rf demo-service && git clone --branch $BRANCH_NAME $SERVICE_REPO demo-service'
                 }
@@ -19,7 +24,7 @@ pipeline {
         }
         stage('Build demo-library'){
             steps{
-                build job: 'demo-library-pipeline', wait: true, propagate: true
+                build job: "${params.LIBRARY_JOB_NAME}", wait: true, propagate: true
                 }
             }
 
