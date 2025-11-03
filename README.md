@@ -91,3 +91,5 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+https://account.jetbrains.com/oauth/login?client_id=ide&scope=openid offline_access r_ide_auth&state=11181821-9e0b-4847-896c-7d7f965acc6c&code_challenge_method=S256&code_challenge=vp2HdDcdsdQxNQhi6Mhl3gEQvY7YJ_Q4CFcc0hWRUV8&request_credentials=required&client_info=eyJidWlsZCI6IjI1MS4yMzc3NC40MjQiLCJwcm9kdWN0IjoiV1MifQ
