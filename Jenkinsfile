@@ -3,7 +3,8 @@ pipeline {
 
     parameters {
         string(name: 'LIBRARY_JOB_NAME', defaultValue: 'demo-library-pipeline', description: 'job name to trigger')
-    }
+        string(name: 'LIBRARY_BRANCH_NAME', defaultValue: 'library-dependency', description: 'branch name')
+         }
 
     environment {
         SERVICE_REPO='https://github.com/altyapistaj/demo-service.git'
@@ -14,7 +15,7 @@ pipeline {
         stage('Checkout demo-service') {
             steps {
                 echo 'Cloning demo-service repository'
-                sh 'rm -rf demo-service && git clone --branch $BRANCH_NAME $SERVICE_REPO demo-service'
+                sh 'rm -Recurse -Force demo-service && git clone --branch $BRANCH_NAME $SERVICE_REPO demo-service'
                 echo 'test'
             }
         }
