@@ -15,6 +15,7 @@ pipeline {
             steps {
                 echo 'Cloning demo-service repository'
                 sh 'rm -rf demo-service && git clone --branch $BRANCH_NAME $SERVICE_REPO demo-service'
+                echo 'test'
             }
         }
         stage('Build demo-library'){
