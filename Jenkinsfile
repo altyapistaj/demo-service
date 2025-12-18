@@ -3,7 +3,6 @@ pipeline {
 
     parameters {
         string(name: 'LIBRARY_JOB_NAME', defaultValue: 'demo-library-pipeline', description: 'job name to trigger')
-        string(name: 'SSH_CREDENTIAL_ID', defaultValue: 'gitlab-ssh-key', description: 'credential name')
     }
 
     environment {
