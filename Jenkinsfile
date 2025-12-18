@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout demo-service') {
             steps {
                 echo 'Cloning demo-service repository'
-                sh 'rm -rf demo-service && git clone --branch $BRANCH_NAME $SERVICE_REPO demo-service'
+                sh 'rm -Recurse -Force demo-service && git clone --branch $BRANCH_NAME $SERVICE_REPO demo-service'
                 echo 'test'
             }
         }
