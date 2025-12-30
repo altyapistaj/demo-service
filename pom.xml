@@ -26,9 +26,13 @@
         <tag/>
         <url/>
     </scm>
-    <properties>
-        <java.version>17</java.version>
-    </properties>
+<!--    <properties>-->
+<!--        <java.version>17</java.version>-->
+<!--        <sonar.projectKey>test</sonar.projectKey>-->
+<!--        <sonar.projectName>test</sonar.projectName>-->
+<!--        <sonar.host.url>http://localhost:9000</sonar.host.url>-->
+<!--        <sonar.token>sqp_5d0cbcecb1adda7551a464428cce1c90fb76a7f4</sonar.token>-->
+<!--    </properties>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -46,6 +50,8 @@
             <artifactId>DemoLibrary</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+
 
     </dependencies>
 
@@ -54,6 +60,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>5.4.0.6343</version>
             </plugin>
         </plugins>
     </build>
